@@ -1,0 +1,253 @@
+/* ===================
+   RESET
+   =================== */
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  background: #3b2a1a;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* COVER */
+.cover {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cover p { margin:0; font-size:18px; }
+.cover h2 { margin:8px 0 20px 0; font-size:32px; }
+
+/* AMPlOP */
+.amplop {
+  width: 240px;
+  height: 140px;
+  background: linear-gradient(#f5e6d3,#e0c7a2);
+  border-radius: 14px;
+  position: relative;
+  margin: 20px;
+}
+.flap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #e0c7a2;
+  clip-path: polygon(0 0, 100% 0, 50% 60%);
+  transform-origin: top;
+  transition: 1.2s;
+}
+.amplop.buka .flap { transform: rotateX(-180deg); }
+
+/* BUTTON */
+#buka {
+  padding: 14px 40px;
+  border-radius: 40px;
+  border: none;
+  background: linear-gradient(135deg,#e0c7a2,#c8a97e,#f5e6d3);
+  color: #3b2a1a;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+#buka:hover { transform: scale(1.05); }
+
+/* VIDEO */
+.video { height: 100vh; position: relative; }
+.video video { width: 100%; height: 100%; object-fit: cover; }
+
+/* SLIDE */
+.slide { height: 100vh; position: relative; }
+.slide img { width: 100%; height: 100%; object-fit: cover; border-radius:20px; box-shadow:0 15px 30px rgba(0,0,0,0.25); }
+
+/* ===================
+   COUNTDOWN
+   =================== */
+#countdown {
+  position: absolute;
+  top: calc(50% + 240px);  /* turun 24 step dari tengah */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;   /* angka rapet */
+  z-index: 999;
+}
+
+#countdown div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#countdown span {
+  font-size: 48px;
+  font-weight: bold;
+  color: #4b2e2e;
+  font-variant-numeric: tabular-nums;
+  position: relative;
+  top: -4px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4); /* efek natural */
+  transition: transform 0.2s ease, color 0.2s ease;
+  will-change: transform;
+}
+
+#countdown p {
+  font-size: 12px;
+  color: #3b2a1a;
+  line-height: 1;
+  margin-top: -1px;  /* nempel ke angka */
+  position: relative;
+  text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.3); /* efek natural label */
+}
+
+/* POSISI SPESIFIK LABEL */
+#countdown div:nth-child(1) { 
+  position: relative;
+  top: -2px;   /* angkat seluruh blok Hari sedikit */
+  left: -7px;  /* geser 1px lagi ke kiri */
+}
+
+#countdown div:nth-child(1) span {
+  font-size: 47px;  
+  top: -5px;   /* naikkan angka supaya sejajar dengan label */
+}
+
+#countdown div:nth-child(1) p {
+  font-size: 12px;
+  margin-top: -5px;  
+  top: -3px;   /* naikkan label supaya pas di tengah angka */
+  line-height: 1;
+  position: relative;
+}
+#countdown div:nth-child(2) { 
+  position: relative;
+  top: -2px;    /* angkat seluruh blok Jam sedikit */
+  left: -3px;   /* geser tipis ke kiri */
+}
+
+#countdown div:nth-child(2) span {
+  font-size: 47px;  
+  top: -5px;    /* naikkan angka supaya selaras dengan label */
+}
+
+#countdown div:nth-child(2) p {
+  font-size: 12px;
+  margin-top: -5px;  
+  top: -3px;    /* naikkan label supaya pas di tengah angka */
+  line-height: 1;
+  position: relative;
+}
+#countdown div:nth-child(3) { 
+  position: relative;
+  top: -2px;  /* angkat seluruh blok Menit agar sejajar vertikal dengan Detik */
+}
+
+#countdown div:nth-child(3) span {
+  font-size: 47px;  /* ukuran angka tetap */
+  top: -5px;        /* naikkan angka supaya sejajar dengan Detik */
+}
+
+#countdown div:nth-child(3) p {
+  font-size: 12px;
+  margin-top: -5px; /* rapet ke angka */
+  top: -3px;        /* naikkan label supaya sejajar dengan Detik */
+  line-height: 1;
+  position: relative;
+}
+#countdown div:nth-child(4) {
+  position: relative;
+  left: 4px;       /* geser seluruh blok Detik ke kiri */
+  top: -2px;       /* angkat seluruh blok sedikit ke atas */
+}
+
+#countdown div:nth-child(4) span {
+  font-size: 47px;  /* ukuran angka tetap */
+  top: -5px;        /* angkat angka sedikit */
+}
+
+#countdown div:nth-child(4) p {
+  font-size: 12px;
+  margin-top: -5px; /* rapet ke angka */
+  top: -3px;        /* angkat label sedikit */
+  line-height: 1;
+  position: relative;
+}
+
+/* ========================= */
+/* LOVE GIFT - POSISI SALIN REKENING TURUN 3px LAGI */
+/* ========================= */
+.klik-rek{
+  position: absolute;
+  bottom: 282px;   /* Turun 3px dari sebelumnya */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 40px;
+  cursor: pointer;
+}
+
+/* Tombol WA tetap di bawah */
+.klik-wa{
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 40px;
+  cursor: pointer;
+}
+
+/* Notifikasi muncul di atas tombol Salin Rekening */
+#notif{
+  position: absolute;
+  bottom: 332px;  /* 50px di atas tombol Salin Rekening */
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  font-size: 12px;
+  color: white;
+  transition: opacity 0.3s ease;
+}
+
+/* WISHES */
+.wishes {
+  background: linear-gradient(180deg,#ffffff,#f5e6d3,#513824);
+  padding:80px 0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.wishes h2 { font-family:"Brush Script MT", cursive; font-size:70px; color:#513824; margin-bottom:40px; }
+.wishes input, .wishes textarea, .wishes select {
+  width:85%;
+  padding:16px;
+  margin:10px 0;
+  border-radius:18px;
+  border:none;
+  background:#ffffff;
+  color:#513824;
+  font-size:14px;
+}
+.wishes textarea { min-height:120px; resize:none; }
+.wishes button {
+  padding:14px 40px;
+  border-radius:30px;
+  background:#513824;
+  color:#fff;
+  font-weight:bold;
+  cursor:pointer;
+  margin-top:10px;
+}
+.wishes button:hover { transform:scale(1.05); }
+.card {
+  width:85%;
+  background:#fff;
+  color:#513824;
+  padding:14px;
+  border-radius:15px;
+  margin-top:12px;
+  word-wrap:break-word;
+}

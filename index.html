@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Undangan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<audio id="music" src="lagu.mp3" loop></audio>
+<audio id="openSound" src="open.mp3"></audio>
+
+<!-- COVER -->
+<div class="cover">
+  <p>Kepada Yth:</p>
+  <h2>Tamu Undangan</h2>
+
+  <div id="amplop" class="amplop">
+    <div class="flap"></div>
+  </div>
+
+  <button id="buka">Buka Undangan</button>
+</div>
+
+<!-- ISI -->
+<div id="isi">
+
+  <!-- VIDEO -->
+  <section class="video"><video src="download_20260329_131311_0000.mp4" autoplay muted loop></video></section>
+  <section class="video"><video src="ARRUM21_20260329_134936_0000.mp4" autoplay muted loop></video></section>
+  <section class="video"><video src="DetailCEWW_20260329_134754_0000.mp4" autoplay muted loop></video></section>
+  <section class="video"><video src="DetailCOWO_20260329_131637_0000.mp4" autoplay muted loop></video></section>
+
+  <!-- SAVE THE DATE -->
+  <section class="slide">
+    <img src="20260329_131519_0000.png" alt="Save The Date">
+
+    <div id="countdown">
+      <div><span id="d">00</span><p>Hari</p></div>
+      <div><span id="h">00</span><p>Jam</p></div>
+      <div><span id="m">00</span><p>Menit</p></div>
+      <div><span id="s">00</span><p>Detik</p></div>
+    </div>
+  </section>
+
+  <!-- AKAD -->
+  <section class="slide" onclick="mapsAkad()">
+    <img src="AkadDanResepsi_20260329_131441_0000.png" alt="Akad">
+  </section>
+
+  <!-- RESEPSI -->
+  <section class="slide" onclick="mapsResepsi()">
+    <img src="AkadDanResepsi_20260329_131441_0001.png" alt="Resepsi">
+  </section>
+
+  <!-- GALLERY -->
+  <section class="slide">
+    <img src="Our Gallery_20260329_131144_0000.png" alt="Gallery">
+  </section>
+
+  <!-- LOVE GIFT -->
+  <section class="slide lovegift">
+    <img src="Love Gift_20260329_131351_0000.png" alt="Love Gift">
+
+    <div class="klik-rek" onclick="copyRek()"></div>
+    <div class="klik-wa" onclick="waFix()"></div>
+
+    <p id="notif"></p>
+  </section>
+
+  <!-- WISHES -->
+  <section class="slide wishes">
+    <h2>Wishes</h2>
+
+    <input id="nama" placeholder="Nama">
+    <textarea id="pesan" placeholder="Tulis pesan terbaikmu..."></textarea>
+
+    <select id="hadir">
+      <option>Hadir</option>
+      <option>Tidak Hadir</option>
+    </select>
+
+    <button onclick="kirim()">Kirim Wishes</button>
+
+    <div id="list"></div>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
